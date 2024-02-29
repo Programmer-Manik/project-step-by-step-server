@@ -142,6 +142,10 @@ const studentSchema = new Schema<TStudent, StudentModel>(
       type: Boolean,
       default: false,
     },
+    academicDepartment: {
+      type: Schema.Types.ObjectId,
+      ref: 'AcademicDepartment',
+    },
   },
   {
     toJSON: {
@@ -178,3 +182,8 @@ studentSchema.statics.isUserExists = async function (id: string) {
 };
 
 export const Student = model<TStudent, StudentModel>('Student', studentSchema);
+
+
+
+
+
